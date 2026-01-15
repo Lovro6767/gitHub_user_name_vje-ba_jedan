@@ -99,3 +99,83 @@
 **Možeš i otvoriti terminal i upisati:**
 
 **git status**
+Assets – sadrži sve skripte, modele, scene i resurse projekta
+
+Library – cache datoteke koje Unity generira (ne verzionira se)
+
+Logs – zapisnici rada Unity editora
+
+Packages – popis Unity paketa i ovisnosti
+
+ProjectSettings – postavke projekta
+
+UserSettings – lokalne korisničke postavke
+
+.vsconfig – Visual Studio konfiguracija
+
+.gitignore je datoteka u kojoj specificiraš koje datoteke ili direktorije Git treba ignorirati, tj. ne dodavati u verzionirani sustav (repository). To znači da će te datoteke ostati lokalne na tvom računaru i neće biti dijeljene s ostalim suradnicima (ili na GitHubu).
+
+Koje datoteke Unity automatski stavlja u .gitignore?
+
+Unity koristi vlastitu verziju .gitignore datoteke, koja već sadrži mnoge stvari koje ne želimo pratiti u Git-u. Evo nekoliko primjera:
+
+1. Library/ direktorij:
+
+Unity koristi direktorij Library za pohranu svih privremenih datoteka koje su potrebne za rad unutar Unity editora. Ovo uključuje cache, skenirane assete, i privremene postavke.
+
+Zašto ignorirati?
+
+Ove datoteke se automatski generiraju kad pokreneš projekt na svom računaru i nisu korisne drugima jer su specifične za tvoje računalo.
+
+2. Temp/ direktorij:
+
+Temp sadrži privremene datoteke koje Unity koristi za razne operacije (npr. za buildove ili za uređivanje scena).
+
+Zašto ignorirati?
+
+Iako se mogu mijenjati tijekom razvoja, nisu korisne za verzioniranje jer se mogu lako ponovno generirati.
+
+3. Build/ ili slični direktoriji:
+
+Ako koristiš Unity za izgradnju aplikacija (buildove) za različite platforme, ti direktoriji sadrže izgrađene verzije igre ili aplikacije.
+
+Zašto ignorirati?
+
+Build datoteke mogu biti velike i specifične za platformu. Također, uvijek ih možeš ponovno izgraditi iz izvornog koda, tako da nema potrebe da budu u Git repozitoriju.
+
+4. Logs/ direktorij:
+
+Sadrži zapisnike i logove rada Unity editora.
+
+Zašto ignorirati?
+
+Log datoteke ne sadrže korisne informacije za projekt, osim ako ne želiš podijeliti specifične greške u procesu.
+
+5. UserSettings/ direktorij:
+
+Ovdje Unity pohranjuje lokalne postavke korisnika koje se ne dijele među članovima tima (npr. korisničke preferencije).
+
+Zašto ignorirati?
+
+Ove datoteke su specifične za korisnika i ne bi trebale biti u repozitoriju, jer ne utječu na sam projekt.
+
+6. vsconfig (Visual Studio konfiguracijska datoteka):
+
+.vsconfig datoteka se koristi za konfiguraciju Visual Studio okruženja.
+
+Zašto ignorirati?
+
+Ove datoteke su specifične za tvoje razvojno okruženje, a nisu bitne za ostatak tima.
+Na kraj README.md dodaj:
+
+Zašto koristimo feature branch?
+
+Zašto je main branch protected?
+
+Što si naučio kroz Pull Request i review proces?
+
+Feature branch omogućuje izolirani razvoj bez ugrožavanja main grane
+
+Protected main sprječava greške i prisiljava code review
+
+Pull Request uči timskom radu, komunikaciji i kontroli kvalitete
